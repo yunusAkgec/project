@@ -1,0 +1,15 @@
+com\example\project\model\RegistrationRequest.class
+com\example\project\repository\ProductRepository.class
+com\example\project\DTO\OrderDTO.class
+com\example\project\DTO\UpdateOrderDTO.class
+com\example\project\model\OrderItem.class
+com\example\project\model\ShoppingCart.class
+com\example\project\repository\UserRepository.class
+com\example\project\service\CartService.class
+com\example\project\model\Product$sex.class
+com\example\project\model\User$Gender.class
+com\example\project\ProjectApplication.class
+com\example\project\model\Product.class
+com\example\project\model\User.class
+com\example\project\repository\CartRepository.class
+com\example\project\repository\OrderRepository.class

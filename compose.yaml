@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+  db:
+    image: "postgres:latest"
+    container_name: db
+    restart: always
+
+    ports:
+      - 5434:5434
+
+    #    volumes:
+    #      - postgres_data:/var/lib/postgresql/data
+
+    environment:
+      - POSTGRES_DB=yunus
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+
+  application:
+    build: ./
+    image: "postgres:latest"
+    container_name: application
+    environment:
+      - DB_SERVER:db
+      - POSTGRES_DB=yunus
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - 8443:8443 # Forward the exposed port 8080 on the container to port 8080 on the host machine
+
+    depends_on:
+      - db
+
+
+
+volumes:
+  postgres_data:
